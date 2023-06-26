@@ -10,6 +10,9 @@ import lombok.Data;
 
 import java.sql.Timestamp;
 import java.util.List;
+import java.util.Set;
+import javax.persistence.FetchType;
+import javax.persistence.CascadeType;
 
 
 /**
@@ -18,6 +21,7 @@ import java.util.List;
  */
 @Entity 
 @Data
+@Table(name = "usuario")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -35,4 +39,9 @@ public class Usuario implements Serializable {
 
 	private String estado;
 
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JoinTable(name = "usuariorol", 
+				joinColumns = @JoinColumn(name = "usuario"), 
+				inverseJoinColumns = @JoinColumn(name = "rol"))
+	private Set<Rol> roles;
 }
