@@ -48,6 +48,10 @@ public class ProblemaController  {
 		return problema;
 	}
 	
+	
+	/** 
+	 * 
+	 */
 	/**
 	@GetMapping("/{id}")
 	public Usuario getUsuariosbyId(@PathVariable Integer id ) {
