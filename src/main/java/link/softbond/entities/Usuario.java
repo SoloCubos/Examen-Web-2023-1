@@ -6,6 +6,7 @@ import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -22,6 +23,7 @@ import javax.persistence.CascadeType;
 @Entity 
 @Data
 @Table(name = "usuario")
+@Builder
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
