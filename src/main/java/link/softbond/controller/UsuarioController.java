@@ -28,9 +28,9 @@ public class UsuarioController {
     private UsuarioRepository usuarioRepository;
     
     
-    @GetMapping("/{email}/login/{clave}")
-	public Boolean login(@PathVariable String email,@PathVariable String clave) {
-		Optional<Usuario>userCurrent=usuarioRepository.findByEmail(email);
+    @GetMapping("/{usuario}/login/{clave}")
+	public Boolean login(@PathVariable String usuario,@PathVariable String clave) {
+		Optional<Usuario>userCurrent=usuarioRepository.findByUsername(usuario);
 		if(userCurrent.isPresent()) {
 			if(userCurrent.get().getClave().equals(clave)) {
 				return true;

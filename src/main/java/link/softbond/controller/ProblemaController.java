@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import link.softbond.entities.Problema;
 import link.softbond.entities.Tabla;
 import link.softbond.repositorios.ProblemaRepository;
@@ -47,6 +46,9 @@ public class ProblemaController  {
 		
 		return problema;
 	}
+	
+	
+	
 	
 	
 	/** 

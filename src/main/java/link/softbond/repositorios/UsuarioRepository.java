@@ -8,6 +8,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import link.softbond.entities.Usuario;
 
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
-	public Optional<Usuario> findByEmail(String email) ;
+	public Usuario findByEmail(String email) ;
+	public Optional<Usuario> findByUsername(String username);
+
 
 }
