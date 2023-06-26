@@ -2,6 +2,7 @@ package link.softbond.entities;
 
 import java.io.Serializable;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import lombok.Data;
+
 
 @Entity
 @Data
@@ -30,4 +32,5 @@ public class Problema implements Serializable{
 
     @Column(name = "nombrebase")
     private String nombreBase;
+
 }
