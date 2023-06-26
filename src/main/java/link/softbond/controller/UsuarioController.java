@@ -1,9 +1,13 @@
 package link.softbond.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,6 +26,18 @@ public class UsuarioController {
 
     @Autowired
     private UsuarioRepository usuarioRepository;
+    
+    
+    @GetMapping("/{email}/login/{clave}")
+	public Boolean login(@PathVariable String email,@PathVariable String clave) {
+		Optional<Usuario>userCurrent=usuarioRepository.findByEmail(email);
+		if(userCurrent.isPresent()) {
+			if(userCurrent.get().getClave().equals(clave)) {
+				return true;
+			}
+		}
+		return false;
+	}
     
     @PostMapping(path = "/registrar")
     public ResponseEntity<?> registrar(@RequestBody UsuarioDTO usuarioDTO){
