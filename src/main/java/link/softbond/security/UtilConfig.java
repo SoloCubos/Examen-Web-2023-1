@@ -1,4 +1,4 @@
-package link.softbond;
+package link.softbond.security;
 
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.MessageSource;

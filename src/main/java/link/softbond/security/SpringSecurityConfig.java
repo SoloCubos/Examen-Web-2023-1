@@ -1,4 +1,4 @@
-package link.softbond;
+package link.softbond.security;
 
 import javax.servlet.Filter;
 
